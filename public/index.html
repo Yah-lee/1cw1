@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yah Lee</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 3vw;
+    }
+
+    h1 {
+      position: absolute;
+      top: 0;
+    }
+
+    h2 {
+      position: absolute;
+      top: 120px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>1Cw1</h2><br>
+  <h1>ຕາຕະລາງຮຽນ</h1>
+  <p id="text"></p>
+
+
+  <script>
+
+    const texts = {
+      1: ["ຊົ່ວໂມງ 1 ເວລາ 08:00 - 09:40 Lect.ຄະນິດສາດສຳລັບຄອມພີວເຕີ 2 (MA205)", "ຊົ່ວໂມງ 2 ເວລາ 10:00 - 11:40 EX.ພາສາອັງກິດສຳລັບວິທະຍາສາດ 2 (FNS312)", "ຊົ່ວໂມງ 3 ເວລາ 13:00 - 14:40 Lab.ພື້ນຖານເວັບໂປຣແກຣມມິ່ງ(CS007)", "ຊົ່ວໂມງ 4 ເວລາ 15:00 - 16:40 Lect.ພື້ນຖານເວັບໂປຣແກຣມມິ່ງ(FNS405)"],
+      2: ["ຊົ່ວໂມງ 2 ເວລາ 10:00 - 11:40 Lect.ການອອກແບບເວັບໄຊ (FNS405)", "ຊົ່ວໂມງ 3 ເວລາ 13:00 - 14:40 Lab.ລະບົບຖານຂໍ້ມູນ (Database System) (CS001)", "ຊົ່ວໂມງ 4 ເວລາ 15:00 - 16:40 Lect.ລະບົບຖານຂໍ້ມູນ (Database System) (MA201)"],
+      3: ["ຊົ່ວໂມງ 1 ເວລາ 08:00 - 09:40 Lect.ການສື່ນສານຂໍ້ມູນ ແລະ ເຄືອຂ່າຍ (BI108)"],
+      4: ["ຊົ່ວໂມງ 1 ເວລາ 08:00 - 09:40 EX.ພາສາອັງກິດສຳລັບວິທະຍາສາດ 2 (FNS312)", "ຊົ່ວໂມງ 2 ເວລາ 10:00 - 11:40 Lab. ການອອກແບບເວັບໄຊ (CS001)", "ຊົ່ວໂມງ 3 ເວລາ 13:00 - 14:40 EX.ຄະນິດສາດສຳລັບຄອມພີວເຕີ 2 (FNS208)"],
+      5: ["ຊົ່ວໂມງ 2 ເວລາ 10:00 - 11:40 Lab.ການສື່ນສານຂໍ້ມູນ ແລະ ເຄືອຂ່າຍ (CS005)"]
+    };
+
+
+    function displayText() {
+      const currentDate = new Date();
+      const currentDay = currentDate.getDay();
+      const textContainer = document.getElementById("text");
+
+      const allTexts = texts[currentDay].join("<br>");
+
+      textContainer.innerHTML = allTexts;
+    }
+
+
+    displayText();
+
+
+    setInterval(displayText, 1000);
+  </script>
+</body>
+
+</html>
